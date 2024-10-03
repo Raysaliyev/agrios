@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    /* Navbar Styling */
+.navbar {
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    background-color: #33333399;
+}
+
+.navbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.navbar .logo img {
+    height: 50px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.nav-links li a:hover {
+    color: #f1c40f; /* Hover color */
+}
+
+.nav-icons {
+    display: flex;
+    align-items: center;
+}
+
+.nav-icons a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    position: relative;
+}
+
+.nav-icons a .cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 50%;
+}
+
+.nav-icons a .phone-icon {
+    color: #f1c40f;
+    font-weight: bold;
+}
+
+.nav-icons a .phone-icon i {
+    margin-right: 5px;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .navbar .container {
+        justify-content: space-between;
+    }
+
+    .navbar .logo img {
+        height: 40px;
+    }
+}
+
+
+
+     /* Hero Section */
+.hero-section {
+    background: url('./div.elementor-repeater-item-8f878b7.png') no-repeat center center/cover;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.hero-section .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Faded overlay for better text contrast */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.hero-content h1 span {
+    color: #f1c40f; /* Highlighted "Healthy" */
+    font-style: italic;
+}
+
+.cta-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 30px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 5px;
+}
+
+.cta-btn:hover {
+    background-color: #45a049;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .cta-btn {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+}
+@media (max-width: 834px) {
+   .nav-links{
+    display: none;
+   }
+}
+.agriculture-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    background-color: #f9f9f9;
+}
+
+.content {
+    flex: 1 1 50%;
+    max-width: 50%;
+    padding-right: 20px;
+}
+
+.subtitle {
+    color: #f0b000;
+    font-family: 'Cursive', sans-serif;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.title {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.description {
+    font-size: 1em;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.highlight-title {
+    font-size: 1.5em;
+    color: #4caf50;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.sub-description {
+    margin-bottom: 20px;
+}
+
+.discover-btn {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.discover-btn:hover {
+    background-color: #45a049;
+}
+
+.images {
+    flex: 1 1 50%;
+    display: flex;
+    flex-direction: row; /* Rasmlarni yonma-yon qilish */
+    gap: 10px;
+}
+
+.images img {
+    width: 100%; /* Rasmlar blokni to'liq qamrab olishi uchun */
+    max-width: 240px; /* Har bir rasmning maksimal kengligi */
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .agriculture-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .content, .images {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .title {
+        font-size: 2em;
+    }
+
+    .images {
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .images img {
+        max-width: 100%;
+    }
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .agriculture-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .content, .images {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .title {
+        font-size: 2em;
+    }
+
+    .images {
+        flex-direction: row;
+        gap: 20px;
+    }
+}
+.services-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 50px 0;
+    background-color: #f9f9f9;
+    gap: 20px;
+    padding: 10px;
+}
+
+.service-box {
+    flex: 1;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.service-box:hover {
+    transform: scale(1.05);
+}
+
+.service-box img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0 0;
+}
+
+.service-title {
+    font-size: 1.5rem;
+    color: #333;
+    margin: 20px 0;
+}
+
+.service-description {
+    font-size: 1rem;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .services-section {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+.farmers-section {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.farmers-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.farmer-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 200px;
+}
+
+.farmer-card img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.farmer-card h3 {
+    margin: 10px 0 5px;
+}
+
+.farmer-card p {
+    color: gray;
+}
+.video-section {
+    background-image: url('./Frame\ 3384410.png');
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0;
+    text-align: center;
+    color: white;
+}
+
+.video-container {
+    position: relative;
+}
+
+.play-btn {
+    font-size: 50px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.video-container h2 {
+    margin-top: 20px;
+    font-size: 2rem;
+}
+.news-section {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.news-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.news-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 200px;
+}
+
+.news-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.news-card h3 {
+    margin: 10px 0 5px;
+}
+.contact-section {
+    display: flex;
+    gap: 20px;
+    padding: 50px 0;
+}
+
+.map-container {
+    flex: 1;
+}
+
+.contact-form {
+    flex: 1;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h2 {
+    margin-bottom: 20px;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.contact-form button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.footer-section {
+    background-color: #333;
+    color: white;
+    padding: 50px 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.footer-logo h2 {
+    font-size: 1.5rem;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-contact p, .footer-news p {
+    margin: 10px 0;
+}
+
+</style>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <img src="./div.elementor-element.png" alt="Agrios Logo">
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="#">News</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <div class="nav-icons">
+                    <a href="#" class="search-icon"><i class="fas fa-search"></i></a>
+                    <a href="#" class="cart-icon"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></a>
+                    <a href="tel:+980009630" class="phone-icon">
+                        <i class="fas fa-phone"></i>
+                        <span>+98 (000)-9630</span>
+                    </a>
+                </div>
+            </div>
+        </nav>        
+        <div class="hero-section">
+            <div class="overlay"></div>
+            <div class="hero-content">
+                <h1>Natural Products <br> For Lovers of <span>Healthy</span> Organic Food</h1>
+                <a href="#" class="cta-btn">Discover More</a>
+            </div>
+        </div>
+    </header>
+    <section style="margin: 0 auto;" class="agriculture-section">
+        <div class="content">
+            <h4 class="subtitle">Get to Know us</h4>
+            <h1 class="title">Leader in Agriculture Market</h1>
+            <p class="description">There are many variations of passages of Lorem Ipsum available majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+            <h5 class="highlight-title">Modern agriculture types</h5>
+            <p class="sub-description">We’re here for you from start to finish</p>
+            <button class="btn discover-btn">Discover More</button>
+        </div>
+        <div class="images">
+            <img src="./div.elementor-column.png" alt="Farmer Image" class="image img-farmer">
+            <img src="./1.png" alt="Tractor Image" class="image img-tractor">
+        </div>
+    </section>
+    <section class="services-section">
+        <div class="service-box">
+            <img src="./service-05.webp.png" alt="Agriculture Products">
+            <div class="service-icon">
+                <i class="fas fa-tractor"></i>
+            </div>
+            <h2 class="service-title">Agriculture Products</h2>
+            <p class="service-description">Lorem ipsum is simply free available. Aenean leo quam.</p>
+        </div>
+    
+        <div class="service-box">
+            <img src="./service-06.webp.png" alt="Organic Products">
+            <div class="service-icon">
+                <i class="fas fa-seedling"></i>
+            </div>
+            <h2 class="service-title">Organic Products</h2>
+            <p class="service-description">Lorem ipsum is simply free available. Aenean leo quam.</p>
+        </div>
+    
+        <div class="service-box">
+            <img src="./service-07.webp.png" alt="Dairy Products">
+            <div class="service-icon">
+                <i class="fas fa-cow"></i>
+            </div>
+            <h2 class="service-title">Dairy Products</h2>
+            <p class="service-description">Lorem ipsum is simply free available. Aenean leo quam.</p>
+        </div>
+    </section>
+    <section class="farmers-section">
+        <h2>Meet Our Farmers</h2>
+        <div class="farmers-container">
+            <div class="farmer-card">
+                <img src="./div.master-team.png" alt="Kevin Smith">
+                <h3>Kevin Smith</h3>
+                <p>Farmer</p>
+            </div>
+            <div class="farmer-card">
+                <img src="./4.png" alt="Jessica Brown">
+                <h3>Jessica Brown</h3>
+                <p>Farmer</p>
+            </div>
+            <div class="farmer-card">
+                <img src="./5.png" alt="David Martin">
+                <h3>David Martin</h3>
+                <p>Farmer</p>
+            </div>
+        </div>
+    </section>
+    <section class="video-section">
+        <div class="video-container">
+            <button class="play-btn">▶</button>
+            <h2>ECO-Friendly Products can be Made from Scratch</h2>
+        </div>
+    </section>
+    <section class="news-section">
+        <h2>News & Articles</h2>
+        <div class="news-container">
+            <div class="news-card">
+                <img src="./div.master-news.png" alt="News 1">
+                <h3>Article 1</h3>
+            </div>
+            <div class="news-card">
+                <img style="height: 270px;" src="./2.png" alt="News 2">
+                <h3>Article 2</h3>
+            </div>
+            <div class="news-card">
+                <img style="height: 270px;" src="./3.png" alt="News 3">
+                <h3>Article 3</h3>
+            </div>
+        </div>
+    </section>
+    <section class="contact-section">
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25102.91886979542!2d70.9309018!3d40.8081909!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38bacf66fd5ff13d%3A0xa3dca58e562e4518!2sGurumsaroy%20Markaziy%20Stadioni!5e1!3m2!1suz!2s!4v1727490336390!5m2!1suz!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="contact-form">
+            <h2>Write a Message</h2>
+            <form>
+                <input type="text" placeholder="Name">
+                <input type="email" placeholder="Email Address">
+                <textarea placeholder="Write a Message"></textarea>
+                <button type="submit">Send a Message</button>
+            </form>
+        </div>
+    </section>
+    <footer class="footer-section">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <h2>Agrios</h2>
+                <p>Bringing Food Production Back to Cities</p>
+            </div>
+            <div class="footer-links">
+                <h3>Explore</h3>
+                <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">News</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-news">
+                <h3>News</h3>
+                <p>Latest Updates on Agriculture</p>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact</h3>
+                <p>Email: info@agrios.com</p>
+                <p>Phone: +123 456 789</p>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+</html>
